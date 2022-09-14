@@ -1,4 +1,4 @@
-from blocks.util.cli import CliManager
+from blocks.cli.manager import CliManager
 from blocks.core import DATA, OPTIONS, BLOCKS
 from blocks.core.clash import *
 from blocks.core.evaluation import *
@@ -7,8 +7,10 @@ from blocks.test.dummy_cli import DummyCliGenerator
 from sys import argv
 
 class Manager(CliManager):
+
     def __init__(self, **opts) -> None:
-        super().__init__(**opts)
+        super().__init__()
+        self.opts = opts
 
     def build(self):
         evaluate_blocks(BLOCKS, DATA)

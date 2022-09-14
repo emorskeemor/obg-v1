@@ -1,36 +1,45 @@
 from blocks.core import DATA, OPTIONS
 from blocks.core.generator import BlockGenerator
 
-if __name__ == "__test__":
+if __name__ == "__main__":
+    # init option block generator with
     generator = BlockGenerator(
+        # data
         data=DATA, 
         options=OPTIONS, 
-        blocks=6,
-        
-        ignore=["Bb"], 
+        # constraints
+        blocks=4,
         class_size=30, 
         min_clash=3,
         strict=False,
     )
+    # generate blocks
     generator.generate()
 
-    generator.ignore.remove("Bb")
-    generator.populate_lowest("Bb",2)
+    # initial or base evaluation
+    print("Initial evaluation :", generator.evaluate())
+    
+    for b in generator.blocks:
+        print(b)
+
+    # manually update the blocks by adding extra classes that are on the boundary
+    # of being 2 classes
     generator.populate_lowest("Ar",2)
     generator.populate_lowest("Mu",2)
     generator.populate((2,), ("Co",))
 
+    print("\nEvalutation by manually updating :", generator.evaluate())
+    
     for b in generator.blocks:
         print(b)
-
-    print(generator.evaluate())
     
 
-if __name__ == "__main__":
+    
+    
+# this was me playing around trying to generate dummy data
+if __name__ == "__test__":
     from blocks.test.dummy import DummyGenerator
     from blocks.core.generator import BlockGenerator
-    from blocks.core.evaluation import get_subject_count
-    from blocks.core import BLOCKS_FILE_NAME
 
     BLOCK_NO = 4
     

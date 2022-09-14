@@ -53,8 +53,8 @@ def evaluate(blocks:Iterable[Iterable], *options, display=False):
                 break
         iters += 1
         options.remove(subject)
-    # display some evaluation
     if display:
+        # display some evaluation if enabled
         print("Constructed :", required)
         if cleared == repetitions:
             print("=> Evaluation successful")
@@ -66,7 +66,7 @@ def evaluate(blocks:Iterable[Iterable], *options, display=False):
 
 def evaluate_blocks(blocks:Iterable[Iterable], data:Iterable[list], display=True):
     '''evaluate all options in data against option blocks. Displays success rate
-    of option blocks'''
+    of option blocks to cli'''
     success_count = 0
     failed = []
     # evaluate each option

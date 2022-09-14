@@ -1,6 +1,6 @@
 import inspect
 
-from cli.execeptions import CommandAlreadyExists
+from .execeptions import CommandAlreadyExists
 
 
 def non_command(func):
@@ -94,7 +94,7 @@ class CliManager:
         '''
         if name is not None:
             if " " in name:
-                raise ValueError("whitespaces are not allowed in the command name")
+                raise Exception("whitespaces are not allowed in the command name")
             setattr(func, "__name__", name)
         if instance:
             setattr(func, "__instance__", True)

@@ -1,5 +1,4 @@
-from typing import Any, Iterable
-from webbrowser import get
+from typing import Any
 
 from blocks.cli.execeptions import ValidationError
 

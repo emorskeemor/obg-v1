@@ -74,6 +74,7 @@ class BlockGenerator:
             self.populate_lowest(subject, classes)
 
     def generate(self):
+        '''Generates option blocks from a given set of data and options'''
         # get the counts and assign number of classes
         counts = get_subject_count(self.data, self.options)
         grouped = {k:{"count":v, "classes":int(v)//self.class_size+1} for k,v in counts.items()}
