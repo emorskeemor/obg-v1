@@ -1,0 +1,13 @@
+Hi,Ge,Sn,Fr,Bs,Eg,Py,Dr,Bb,Hc
+Hi,Ge,Sn,Sc,Sp,Ps,Mu,Pd,Ec,Cb
+Hi,Ge,Sn,Co,Sp,Ps,Eg,Hb,Sb,So
+Hi,Ge,Fr,Sc,Sp,Bs,Ar,Re,Bb,Pb,Te
+
+success percentage : 87.61 %
+
+note: used a method by spliting classes into groups
+
+Ge,Hi,Sn,Sp,Fr
+Ge,Hi,Sn,Sp
+Ge,Hi,Sn,Bs
+Ge,Hi,Sp,Ps,Sc,Te,Bs,Fr

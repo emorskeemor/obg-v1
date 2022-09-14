@@ -1,0 +1,2 @@
+class SubjectNonExistent(Exception):
+    pass
